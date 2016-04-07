@@ -3,6 +3,8 @@ var purify = require('gulp-purifycss');
 
 gulp.task('css', function() {
   return gulp.src('./style.css')
-    .pipe(purify(['./src/**/*.html']))
+    .pipe(purify(['./src/**/*.html'], {
+      rejected: true
+    }))
     .pipe(gulp.dest('./cleansed/'));
 });
